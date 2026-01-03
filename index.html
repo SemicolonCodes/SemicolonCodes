@@ -348,25 +348,25 @@
                 btnText.innerText = 'Generate 4-Week Roadmap';
             }
 
-            modal.classList.remove('hidden');
-            modal.classList.add('flex');
-            setTimeout(() => {
-                modal.classList.add('opacity-100');
-                container.classList.remove('scale-95');
-                container.classList.add('scale-100');
-            }, 10);
-        }
+        //     modal.classList.remove('hidden');
+        //     modal.classList.add('flex');
+        //     setTimeout(() => {
+        //         modal.classList.add('opacity-100');
+        //         container.classList.remove('scale-95');
+        //         container.classList.add('scale-100');
+        //     }, 10);
+        // }
 
-        function closeAIModal() {
-            const modal = document.getElementById('ai-modal');
-            const container = document.getElementById('modal-container');
-            modal.classList.remove('opacity-100');
-            container.classList.add('scale-95');
-            setTimeout(() => {
-                modal.classList.add('hidden');
-                modal.classList.remove('flex');
-                resetAIModal();
-            }, 300);
+        // function closeAIModal() {
+        //     const modal = document.getElementById('ai-modal');
+        //     const container = document.getElementById('modal-container');
+        //     modal.classList.remove('opacity-100');
+        //     container.classList.add('scale-95');
+        //     setTimeout(() => {
+        //         modal.classList.add('hidden');
+        //         modal.classList.remove('flex');
+        //         resetAIModal();
+        //     }, 300);
         }
 
         function resetAIModal() {
