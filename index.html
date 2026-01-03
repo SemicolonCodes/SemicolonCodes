@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semicolon | Tech Agency & Academy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #0a0f1e; color: #e2e8f0; }
+        .mono { font-family: 'JetBrains+Mono', monospace; }
+        
+        @keyframes blink { 50% { opacity: 0; } }
+        .cursor-blink { animation: blink 1s step-end infinite; }
+        
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.05); }
+        .hero-gradient { background: radial-gradient(circle at top right, rgba(37, 99, 235, 0.15), transparent 40%), radial-gradient(circle at bottom left, rgba(249, 115, 22, 0.1), transparent 40%); }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0a0f1e; }
+        ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #334155; }
+
+        .ai-response-container p { margin-bottom: 1rem; }
+        .ai-response-container ul { list-style: disc; margin-left: 1.5rem; margin-bottom: 1rem; }
+    </style>
+</head>
+<body class="selection:bg-orange-500/30 overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-6">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+            <div class="flex items-center gap-3 group cursor-pointer">
+                <div>
+                    <img src="./logo last-100.jpg" class="w-10 rounded-full" alt="">
+                </div>
+                <div class="flex flex-col leading-none">
+                    <span class="text-xl font-bold tracking-tight text-white capitalize">Semicolon</span>
+                    <span class="text-[9px] text-orange-500 font-bold tracking-widest uppercase">From Start to End</span>
+                </div>
+            </div>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center gap-10">
+                <a href="#services" class="text-sm font-semibold hover:text-orange-500 transition-colors">Services</a>
+                <a href="#courses" class="text-sm font-semibold hover:text-orange-500 transition-colors">Academy</a>
+                <a href="#portfolio" class="text-sm font-semibold hover:text-orange-500 transition-colors">Portfolio</a>
+                <button onclick="openAIModal('architect')" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 rounded-full text-sm font-bold transition-all hover:shadow-[0_0_20px_rgba(37,99,235,0.4)]">
+                    Get Started
+                </button>
+            </div>
+
+            <!-- Mobile Menu button -->
+            <button class="md:hidden text-white" id="mobile-menu-btn">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative pt-44 pb-32 hero-gradient overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+            <div class="space-y-10 relative z-10">
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-orange-500 text-[10px] font-bold tracking-widest uppercase">
+                    <span class="w-2 h-2 rounded-full bg-orange-500 animate-pulse"></span>
+                    Empowering Digital Innovation
+                </div>
+                <h1 class="text-6xl lg:text-6xl font-black text-white leading-[1.0] tracking-tighter">
+                    Code the Future, <br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-blue-600 to-orange-500">
+                        Design the Dream.
+                    </span>
+                </h1>
+                <p class="text-xl text-slate-400 max-w-lg leading-relaxed font-medium">
+                    We provide end-to-end digital solutions through expert software development and world-class programming education.
+                </p>
+                <div class="flex flex-wrap gap-5">
+                    <button onclick="openAIModal('architect')" class="px-8 py-5 bg-orange-500 hover:bg-orange-600 text-white rounded-[2rem] font-bold flex items-center gap-3 transition-all group shadow-xl shadow-orange-500/20">
+                        <i data-lucide="brain-circuit" class="w-5 h-5"></i>
+                        Architect My Idea
+                    </button>
+                    <button onclick="window.location.href='#courses'" class="px-8 py-5 glass text-white rounded-[2rem] font-bold transition-all border border-white/10 hover:bg-white/5">
+                        Browse Courses
+                    </button>
+                </div>
+            </div>
+            
+            <div class="relative">
+                <div class="relative z-10 rounded-[2.5rem] overflow-hidden border border-white/10 bg-[#0c1326]/80 backdrop-blur-xl p-2 shadow-[0_32px_64px_-16px_rgba(0,0,0,0.6)]">
+                    <div class="flex items-center justify-between px-6 py-4 bg-white/5 border-b border-white/10">
+                        <div class="flex gap-2">
+                            <div class="w-3 h-3 rounded-full bg-red-500/40"></div>
+                            <div class="w-3 h-3 rounded-full bg-yellow-500/40"></div>
+                            <div class="w-3 h-3 rounded-full bg-green-500/40"></div>
+                        </div>
+                        <div class="text-[10px] text-slate-500 font-mono tracking-widest uppercase">semicolon_v2.js</div>
+                    </div>
+                    <div class="p-8 mono text-sm leading-relaxed space-y-3">
+                        <div class="flex gap-4"><span class="text-slate-600">01</span><span class="text-blue-400">const</span> <span class="text-white">Project</span> = {'{'}</div>
+                        <div class="flex gap-4"><span class="text-slate-600">02</span>&nbsp;&nbsp;&nbsp;&nbsp;partner: <span class="text-orange-400">"Semicolon"</span>,</div>
+                        <div class="flex gap-4"><span class="text-slate-600">03</span>&nbsp;&nbsp;&nbsp;&nbsp;status: <span class="text-green-400">"Ready_to_Execute"</span>,</div>
+                        <div class="flex gap-4"><span class="text-slate-600">04</span>&nbsp;&nbsp;&nbsp;&nbsp;launch: <span class="text-blue-400">() =></span> {'{'}</div>
+                        <div class="flex gap-4"><span class="text-slate-600">05</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(<span class="text-orange-400">"Build. Grow. Repeat;"</span>);</div>
+                        <div class="flex gap-4"><span class="text-slate-600">06</span>&nbsp;&nbsp;&nbsp;&nbsp;{'}'}</div>
+                        <div class="flex gap-4"><span class="text-slate-600">07</span>{'}'};</div>
+                        <div class="flex gap-4 items-center"><span class="text-slate-600">08</span><span class="w-2 h-5 bg-blue-500 cursor-blink"></span></div>
+                    </div>
+                </div>
+                <div class="absolute -inset-10 bg-blue-600/20 blur-[100px] -z-10 rounded-full animate-pulse"></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Stats -->
+    <section class="py-20 border-y border-white/5 glass">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
+            <div class="space-y-2">
+                <div class="text-4xl font-black text-white">150+</div>
+                <div class="text-[10px] text-orange-500 font-black uppercase tracking-[0.2em]">Projects Delivered</div>
+            </div>
+            <div class="space-y-2">
+                <div class="text-4xl font-black text-white">2.5k+</div>
+                <div class="text-[10px] text-orange-500 font-black uppercase tracking-[0.2em]">Students Trained</div>
+            </div>
+            <div class="space-y-2">
+                <div class="text-4xl font-black text-white">98%</div>
+                <div class="text-[10px] text-orange-500 font-black uppercase tracking-[0.2em]">Client Success</div>
+            </div>
+            <div class="space-y-2">
+                <div class="text-4xl font-black text-white">12+</div>
+                <div class="text-[10px] text-orange-500 font-black uppercase tracking-[0.2em]">Global Instructors</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="py-32 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-24 space-y-6">
+                <h2 class="text-blue-500 font-bold uppercase tracking-[0.3em] text-xs">Capabilities</h2>
+                <h3 class="text-5xl font-black text-white tracking-tight">Full Spectrum Tech</h3>
+                <p class="text-slate-500 max-w-2xl mx-auto text-lg">We don't just write code; we architect experiences that drive business growth.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="group p-10 rounded-[2.5rem] bg-white/[0.02] border border-white/5 hover:border-blue-500/30 transition-all hover:translate-y-[-8px]">
+                    <div class="mb-8 p-5 bg-blue-500/10 inline-block rounded-2xl text-blue-500 transition-transform group-hover:scale-110">
+                        <i data-lucide="monitor" class="w-8 h-8"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-white mb-4">Web Development</h4>
+                    <p class="text-slate-400 leading-relaxed mb-8">Crafting high-performance, SEO-optimized web applications using Next.js, React, and robust cloud architectures.</p>
+                    <a href="#" class="flex items-center gap-2 text-sm font-bold text-blue-400 hover:text-blue-300 transition-colors uppercase tracking-widest">
+                        Explore <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+
+                <div class="group p-10 rounded-[2.5rem] bg-white/[0.02] border border-white/5 hover:border-orange-500/30 transition-all hover:translate-y-[-8px]">
+                    <div class="mb-8 p-5 bg-orange-500/10 inline-block rounded-2xl text-orange-500 transition-transform group-hover:scale-110">
+                        <i data-lucide="smartphone" class="w-8 h-8"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-white mb-4">Mobile Solutions</h4>
+                    <p class="text-slate-400 leading-relaxed mb-8">Developing seamless native-feel cross-platform mobile experiences with Flutter and React Native for iOS & Android.</p>
+                    <a href="#" class="flex items-center gap-2 text-sm font-bold text-orange-400 hover:text-orange-300 transition-colors uppercase tracking-widest">
+                        Explore <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+
+                <div class="group p-10 rounded-[2.5rem] bg-white/[0.02] border border-white/5 hover:border-blue-500/30 transition-all hover:translate-y-[-8px]">
+                    <div class="mb-8 p-5 bg-blue-500/10 inline-block rounded-2xl text-blue-500 transition-transform group-hover:scale-110">
+                        <i data-lucide="award" class="w-8 h-8"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-white mb-4">Tech Academy</h4>
+                    <p class="text-slate-400 leading-relaxed mb-8">Bridging the talent gap with intensive project-based bootcamps led by senior industry veterans.</p>
+                    <a href="#" class="flex items-center gap-2 text-sm font-bold text-blue-400 hover:text-blue-300 transition-colors uppercase tracking-widest">
+                        Explore <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Section Call -->
+    <section id="ai-academy" class="py-32 bg-[#0c1326]/50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="glass rounded-[4rem] p-12 md:p-20 relative overflow-hidden group">
+                <div class="absolute top-0 right-0 p-12 opacity-5 group-hover:opacity-10 transition-all">
+                    <i data-lucide="sparkles" class="w-64 h-64 text-blue-400"></i>
+                </div>
+                <div class="relative z-10 max-w-2xl space-y-8 text-left md:text-left">
+                    <h3 class="text-4xl md:text-6xl font-black text-white italic tracking-tighter leading-[0.9]">
+                        Don't see your <br>
+                        <span class="text-orange-500">Ideal Course?</span>
+                    </h3>
+                    <p class="text-slate-400 text-xl leading-relaxed">
+                        Tell us your career goal, and our Gemini-powered AI mentor will build a custom 4-week roadmap just for you.
+                    </p>
+                    <button onclick="openAIModal('mentor')" class="px-10 py-5 bg-blue-600 hover:bg-blue-700 text-white rounded-2xl font-bold transition-all shadow-xl shadow-blue-600/20 flex items-center gap-3">
+                        <i data-lucide="wand2" class="w-5 h-5"></i>
+                        Generate My Learning Path
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="pt-32 pb-16 bg-black/40 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-16 mb-24">
+                <div class="space-y-8">
+                    <div class="flex items-center gap-3">
+                <div>
+                    <img src="./logo last-100.jpg" class="w-10 rounded-full" alt="">
+                </div>
+                <span class="text-2xl font-black text-white tracking-tighter capitalize">Semicolon</span>
+                </div>
+                    <p class="text-slate-500 text-lg leading-relaxed max-w-xs">
+                        Premium digital craftsmanship and modern tech education.
+                    </p>
+                </div>
+                
+                <div class="space-y-8">
+                    <h6 class="text-white font-black uppercase tracking-widest text-[10px]">Services</h6>
+                    <ul class="space-y-4 text-sm text-slate-500 font-bold">
+                        <li><a href="#" class="hover:text-blue-500 transition-colors">Web Apps</a></li>
+                        <li><a href="#" class="hover:text-blue-500 transition-colors">Mobile Platforms</a></li>
+                        <li><a href="#" class="hover:text-blue-500 transition-colors">UI/UX Design</a></li>
+                    </ul>
+                </div>
+
+                <div class="space-y-8">
+                    <h6 class="text-white font-black uppercase tracking-widest text-[10px]">Academy</h6>
+                    <ul class="space-y-4 text-sm text-slate-500 font-bold">
+                        <li><a href="#" class="hover:text-orange-500 transition-colors">Web Bootcamp</a></li>
+                        <li><a href="#" class="hover:text-orange-500 transition-colors">Mobile Mastery</a></li>
+                        <li><a href="#" class="hover:text-orange-500 transition-colors">Custom Path</a></li>
+                    </ul>
+                </div>
+
+                <div class="space-y-8">
+                    <h6 class="text-white font-black uppercase tracking-widest text-[10px]">Contact</h6>
+                    <ul class="space-y-4 text-sm text-slate-500 font-bold">
+                        <li>development@semicolon.dev</li>
+                        <li>+20 11 0701 8616</li>
+                        <li>+20 11 5456 4056</li>
+                        <li>Cairo, Egypt</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="pt-12 border-t border-white/5 text-center">
+                <p class="text-[10px] text-slate-700 font-black uppercase tracking-[0.4em]">© 2024 Semicolon Tech Group. Built for the Future.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AI Modal -->
+    <div id="ai-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-6 backdrop-blur-xl bg-black/60 transition-all opacity-0">
+        <div class="bg-[#0f172a] border border-white/10 rounded-[3rem] w-full max-w-2xl overflow-hidden shadow-2xl scale-95 transition-transform duration-300" id="modal-container">
+            <div class="p-8 border-b border-white/5 flex justify-between items-center bg-white/[0.02]">
+                <div class="flex items-center gap-4">
+                    <div id="modal-icon-bg" class="p-3 rounded-2xl bg-gradient-to-br from-blue-600 to-indigo-600 text-white">
+                        <i id="modal-icon" data-lucide="sparkles" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h3 id="modal-title" class="text-2xl font-black text-white uppercase tracking-tighter">AI Project Architect</h3>
+                        <p class="text-[10px] text-slate-500 font-black uppercase tracking-widest">Semicolon Intelligence v2.5</p>
+                    </div>
+                </div>
+                <button onclick="closeAIModal()" class="p-3 hover:bg-white/5 rounded-full transition-colors text-slate-400 hover:text-white">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+
+            <div class="p-10 max-h-[75vh] overflow-y-auto" id="modal-body">
+                <div id="input-view" class="space-y-8">
+                    <div>
+                        <label id="input-label" class="block text-xs font-black text-slate-500 uppercase tracking-[0.2em] mb-4">Describe your project idea in detail</label>
+                        <textarea id="ai-input" placeholder="..." class="w-full h-40 bg-white/5 border border-white/10 rounded-2xl p-6 text-white placeholder:text-slate-600 focus:outline-none focus:border-blue-500/50 transition-all resize-none font-medium leading-relaxed"></textarea>
+                    </div>
+                    <button id="generate-btn" onclick="generateAI()" class="w-full py-5 bg-white text-black rounded-3xl font-black text-lg flex items-center justify-center gap-3 hover:bg-blue-500 hover:text-white transition-all shadow-xl shadow-black/20">
+                        <i data-lucide="wand-2" class="w-5 h-5"></i>
+                        <span>Start Brainstorming</span>
+                    </button>
+                </div>
+
+                <div id="loading-view" class="hidden py-20 text-center space-y-6">
+                    <div class="w-16 h-16 border-4 border-blue-500 border-t-transparent rounded-full animate-spin mx-auto"></div>
+                    <p class="text-slate-400 font-bold uppercase tracking-widest text-xs animate-pulse">Semicolon AI is calculating your roadmap...</p>
+                </div>
+
+                <div id="response-view" class="hidden space-y-8 animate-in fade-in slide-in-from-bottom-5">
+                    <div id="ai-response" class="prose prose-invert prose-slate max-w-none text-slate-300 font-medium leading-relaxed ai-response-container">
+                        <!-- AI Response content injected here -->
+                    </div>
+                    <div class="pt-8 border-t border-white/5 flex gap-4">
+                        <button onclick="resetAIModal()" class="flex-1 py-4 glass text-white rounded-2xl font-bold hover:bg-white/5 transition-all text-sm uppercase tracking-widest">Generate New</button>
+                        <button onclick="closeAIModal()" class="flex-1 py-4 bg-blue-600 text-white rounded-2xl font-bold hover:bg-blue-700 transition-all text-sm uppercase tracking-widest">Connect with Us</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Init Lucide Icons
+        lucide.createIcons();
+
+        const apiKey = ""; // Runtime provides this
+        let currentMode = 'architect';
+
+        // Scroll listener for Navbar
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 40) {
+                nav.classList.add('bg-[#0a0f1e]/80', 'backdrop-blur-xl', 'border-b', 'border-white/5', 'py-4', 'shadow-2xl');
+                nav.classList.remove('py-6');
+            } else {
+                nav.classList.remove('bg-[#0a0f1e]/80', 'backdrop-blur-xl', 'border-b', 'border-white/5', 'py-4', 'shadow-2xl');
+                nav.classList.add('py-6');
+            }
+        });
+
+        // AI Modal Controls
+        function openAIModal(mode) {
+            currentMode = mode;
+            const modal = document.getElementById('ai-modal');
+            const container = document.getElementById('modal-container');
+            const title = document.getElementById('modal-title');
+            const iconBg = document.getElementById('modal-icon-bg');
+            const inputLabel = document.getElementById('input-label');
+            const input = document.getElementById('ai-input');
+            const btnText = document.querySelector('#generate-btn span');
+
+            if (mode === 'architect') {
+                title.innerText = 'AI Project Architect';
+                iconBg.className = 'p-3 rounded-2xl bg-gradient-to-br from-blue-600 to-indigo-600 text-white';
+                inputLabel.innerText = 'Describe your project idea in detail';
+                input.placeholder = 'e.g., I want to build a fitness app that tracks workouts using AI...';
+                btnText.innerText = 'Generate Technical Proposal';
+            } else {
+                title.innerText = 'AI Learning Path';
+                iconBg.className = 'p-3 rounded-2xl bg-gradient-to-br from-orange-500 to-red-600 text-white';
+                inputLabel.innerText = 'What are your career goals in tech?';
+                input.placeholder = 'e.g., I want to become a Flutter developer in 3 months starting from scratch...';
+                btnText.innerText = 'Generate 4-Week Roadmap';
+            }
+
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            setTimeout(() => {
+                modal.classList.add('opacity-100');
+                container.classList.remove('scale-95');
+                container.classList.add('scale-100');
+            }, 10);
+        }
+
+        function closeAIModal() {
+            const modal = document.getElementById('ai-modal');
+            const container = document.getElementById('modal-container');
+            modal.classList.remove('opacity-100');
+            container.classList.add('scale-95');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+                resetAIModal();
+            }, 300);
+        }
+
+        function resetAIModal() {
+            document.getElementById('input-view').classList.remove('hidden');
+            document.getElementById('loading-view').classList.add('hidden');
+            document.getElementById('response-view').classList.add('hidden');
+            document.getElementById('ai-input').value = '';
+            document.getElementById('ai-response').innerHTML = '';
+        }
+
+        async function generateAI() {
+            const prompt = document.getElementById('ai-input').value;
+            if (!prompt) return;
+
+            document.getElementById('input-view').classList.add('hidden');
+            document.getElementById('loading-view').classList.remove('hidden');
+
+            const systemPrompt = currentMode === 'architect' 
+                ? "You are a Senior Technical Architect at Semicolon Agency. Provide a structured, professional technical proposal including: 1. Executive Summary 2. Tech Stack (Frontend, Backend, DB) 3. Core Features 4. Estimation Timeline. Use bold headers and clean bullet points. Be encouraging."
+                : "You are a world-class Programming Mentor at Semicolon Academy. Create a custom 4-week learning roadmap with weekly topics, practical project milestones, and key concepts to master. Be structured and outcome-focused.";
+
+            const responseText = await callGemini(prompt, systemPrompt);
+            
+            if (responseText) {
+                // Simple markdown-ish to HTML conversion for display
+                const htmlResponse = responseText
+                    .replace(/\*\*(.*?)\*\*/g, '<strong class="text-white">$1</strong>')
+                    .replace(/\n\n/g, '<p></p>')
+                    .replace(/\* /g, '• ')
+                    .replace(/\n/g, '<br>');
+
+                document.getElementById('ai-response').innerHTML = htmlResponse;
+                document.getElementById('loading-view').classList.add('hidden');
+                document.getElementById('response-view').classList.remove('hidden');
+            } else {
+                alert("Failed to connect to AI. Please try again.");
+                resetAIModal();
+            }
+        }
+
+        async function callGemini(userQuery, systemPrompt) {
+            const maxRetries = 5;
+            let currentDelay = 1000;
+
+            for (let i = 0; i < maxRetries; i++) {
+                try {
+                    const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            contents: [{ parts: [{ text: userQuery }] }],
+                            systemInstruction: { parts: [{ text: systemPrompt }] }
+                        })
+                    });
+
+                    if (!response.ok) throw new Error();
+
+                    const data = await response.json();
+                    return data.candidates?.[0]?.content?.parts?.[0]?.text;
+                } catch (e) {
+                    if (i === maxRetries - 1) return null;
+                    await new Promise(r => setTimeout(r, currentDelay));
+                    currentDelay *= 2;
+                }
+            }
+        }
+    </script>
+</body>
+</html>
